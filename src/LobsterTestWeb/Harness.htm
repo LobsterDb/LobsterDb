@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    
+    <script type="text/javascript" src="/Lobster/Framework.js"></script>
+
+<script type="text/javascript">
+
+var Test = {
+
+    buildCompositeClassModel: function(){
+        var composite = new Lobster.Composites.Composite.Composite({
+            compositeModelId: '26761d27-392c-4466-ab5d-7849c7c91474',
+            compositeModelSource: 'Framework'
+        });
+        composite.setFieldValue('Name', 'Contact');
+        composite.setFieldValue('IsComposite', true);
+        var fieldModels = composite.getChildSet('c26f63b3-df37-49d6-a238-aa04009dabb1');
+        //create primary key
+        fieldModel = fieldModels.getNew();
+        fieldModel.setFieldValue('Name', 'ContactId');
+        fieldModel.setFieldValue('DataTypeId', 4);
+        fieldModel = fieldModels.getNew();
+        fieldModel.setFieldValue('Name', 'Name');
+        fieldModel.setFieldValue('DataTypeId', 10);
+        fieldModel = fieldModels.getNew();
+        fieldModel.setFieldValue('Name', 'Address');
+        fieldModel.setFieldValue('DataTypeId', 10);
+        fieldModel = fieldModels.getNew();
+        fieldModel.setFieldValue('Name', 'City');
+        fieldModel.setFieldValue('DataTypeId', 10);
+        fieldModel = fieldModels.getNew();
+        fieldModel.setFieldValue('Name', 'State');
+        fieldModel.setFieldValue('DataTypeId', 10);
+        fieldModel = fieldModels.getNew();
+        fieldModel.setFieldValue('Name', 'Zipcode');
+        fieldModel.setFieldValue('DataTypeId', 10);
+        composite.persist();
+    }
+
+};
+
+Test.buildCompositeClassModel();
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
